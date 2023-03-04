@@ -26,6 +26,7 @@ export class AbilityFactory {
       can(Action.Manage, 'all');
     } else {
       can(Action.Read, User);
+      cannot(Action.Create, User).because('your special message: only admins');
     }
     return build({
       detectSubjectType: (item) =>
