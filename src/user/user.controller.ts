@@ -33,7 +33,7 @@ export class UserController {
 
     try {
       ForbiddenError.from(ability)
-        .setMessage('your message')
+        // .setMessage('your message')
         .throwUnlessCan(Action.Create, User);
       return this.userService.create(createUserDto);
     } catch (error) {
